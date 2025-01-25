@@ -14,33 +14,108 @@ export class QuizService {
   // Liste des questions de quiz
   private questions: Question[] = [
     {
-      text: "Comment décrirais-tu ton énergie au quotidien?",
+      text: "Si tu étais un style vestimentaire, lequel choisirais-tu ?",
       answers: [
-        "Explosive et dynamique",
-        "Calme et posée",
-        "Changeante comme les vagues",
-        "Passionnée et intense"
+        "Élégant et chic, avec des touches de luxe.",
+        "Classique, un look rétro mais intemporel.",
+        "Décontracté, avec des vêtements confortables et un brin excentriques.",
+        "Théâtral, audacieux et plein d’extravagance."
       ],
       scores: [
-        { "We Will Rock You": 3, "Don't Stop Me Now": 4 }, //En gros là sur la reponse 1 si on a répondu la a et bah on gagne 3pts pour la première musique et 4 pts pour l'autre
-        { "Love of My Life": 4, "These Are the Days of Our Lives": 3 },
-        { "Bohemian Rhapsody": 4, "The Show Must Go On": 2 },
-        { "Somebody to Love": 4, "Who Wants to Live Forever": 3 }
+        { "Killer Queen": 4}, //En gros là sur la reponse 1 si on a répondu la a et bah on gagne 3pts pour la première musique et 4 pts pour l'autre
+        { "Good Old-Fashioned Boy": 4 },
+        { "Lazing on a Sunday Afternoon": 4 },
+        { "Bohemian Rhapsody": 4}
       ]
     },
     {
-      text: "Quelle est ta plus grande motivation dans la vie?",
+      text: "Quel est ton état d’esprit en général?",
       answers: [
-        "Le succès et la reconnaissance",
-        "L'amour et les relations",
-        "La liberté et l'expression de soi",
-        "Laisser une trace dans l'histoire"
+        "Confident et plein d’assurance.",
+        "Tourmenté et introspectif, mais créatif.",
+        "Nostalgique et rêveur.",
+        "Détendu, prêt à profiter d’un moment tranquille."
       ],
       scores: [
-        { "We Are the Champions": 4, "Don't Stop Me Now": 3 },
-        { "Love of My Life": 4, "Somebody to Love": 3 },
-        { "I Want to Break Free": 4, "Bohemian Rhapsody": 3 },
-        { "The Show Must Go On": 4, "Who Wants to Live Forever": 3 }
+        { "Killer Queen": 4 },
+        { "Bohemian Rhapsody": 4 },
+        { "Good Old-Fashioned Boy": 4},
+        { "Lazing on a Sunday Afternoon": 4}
+      ]
+    },
+    {
+      text: "Quel paysage te fait rêver ?",
+      answers: [
+        "Une plage tranquille avec des vagues douces.",
+        "Une montagne mystérieuse sous un ciel étoilé.",
+        "Un jardin anglais paisible et verdoyant.",
+        "Une grande ville animée et pleine de lumière."
+      ],
+      scores: [
+        { "Killer Queen": 4 },
+        { "Bohemian Rhapsody": 4 },
+        { "Good Old-Fashioned Lover Boy": 4 },
+        { "Lazing on a Sunday Afternoon": 4 }
+      ]
+    },
+    {
+      text: "Quelle est ta devise dans la vie ?",
+      answers: [
+        "Tout ce que je fais doit briller.",
+        "Être unique et rester fidèle à moi-même.",
+        "Profiter des plaisirs simples de la vie.",
+        "Vivre chaque jour comme un dimanche."
+      ],
+      scores: [
+        { "Killer Queen": 4 },
+        { "Bohemian Rhapsody": 4 },
+        { "Good Old-Fashioned Lover Boy": 4 },
+        { "Lazing on a Sunday Afternoon": 4 }
+      ]
+    },
+    {
+      text: "Que fais-tu lorsque tu te sens stressé ?",
+      answers: [
+        "Je me plonge dans un projet créatif pour me changer les idées.",
+        "Je chante ou écoute de la musique à fond.",
+        "Je prends le temps de me recentrer, une tasse de thé à la main.",
+        "Je fais une sieste ou me détends sans pression."
+      ],
+      scores: [
+        { "Bohemian Rhapsody": 4 },
+        { "Killer Queen": 4 },
+        { "Good Old-Fashioned Lover Boy": 4 },
+        { "Lazing on a Sunday Afternoon": 4 }
+      ]
+    },
+    {
+      text: "Quelle qualité te représente le mieux ?",
+      answers: [
+        "Charismatique et sûr(e) de moi.",
+        "Imaginatif(ve) et imprévisible.",
+        "Romantique et charmant(e).",
+        "Décontracté(e) et joyeux(se)."
+      ],
+      scores: [
+        { "Killer Queen": 4 },
+        { "Bohemian Rhapsody": 4 },
+        { "Good Old-Fashioned Lover Boy": 4 },
+        { "Lazing on a Sunday Afternoon": 4 }
+      ]
+    },
+    {
+      text: "Comment gères-tu les imprévus ?",
+      answers: [
+        "Avec assurance et créativité, je trouve toujours une solution.",
+        "Je panique un peu mais je m’en sors grâce à ma débrouillardise.",
+        "Je prends du recul pour réfléchir avant d’agir.",
+        "Je les accepte comme ils viennent, en restant détendu."
+      ],
+      scores: [
+        { "Killer Queen": 4 },
+        { "Bohemian Rhapsody": 4 },
+        { "Good Old-Fashioned Lover Boy": 4 },
+        { "Lazing on a Sunday Afternoon": 4 }
       ]
     }
   ];
@@ -48,20 +123,30 @@ export class QuizService {
   // Scores initiaux pour chaque chanson
   private scores: { [key: string]: number } = {
     "Bohemian Rhapsody": 0,
-    "We Will Rock You": 0,
-    "Don't Stop Me Now": 0,
-    "Somebody to Love": 0,
-    "Love of My Life": 0,
-    "The Show Must Go On": 0,
-    "I Want to Break Free": 0,
-    "We Are the Champions": 0,
-    "These Are the Days of Our Lives": 0,
-    "Who Wants to Live Forever": 0
+    "Killer Queen": 0,
+    "Good Old-Fashioned Lover Boy": 0,
+    "Lazing on a Sunday Afternoon": 0,
   };
 
-  // Méthode pour obtenir les questions de quiz
+  // Méthode utilitaire pour mélanger un tableau
+  private shuffle<T>(array: T[]): T[] {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Méthode pour obtenir les questions de quiz avec ordre aléatoire
   getQuestions(): Question[] {
-    return this.questions;
+    // Clone les questions pour éviter de modifier l'original
+    const shuffledQuestions = this.questions.map(question => ({
+      ...question,
+      answers: this.shuffle([...question.answers]),
+      scores: [...question.scores]
+    }));
+
+    return this.shuffle(shuffledQuestions);
   }
 
   // Méthode pour soumettre une réponse et mettre à jour les scores
@@ -82,5 +167,16 @@ export class QuizService {
     for (const song in this.scores) {
       this.scores[song] = 0;
     }
+  }
+
+  // Méthode pour obtenir le chemin de l'image en fonction du résultat
+  getImageForResult(result: string): string {
+    const imageMap: { [key: string]: string } = {
+      "Bohemian Rhapsody": "assets/bohemianrhapsody.png",
+      "Killer Queen": "assets/killerqueen.png",
+      "Good Old-Fashioned Lover Boy": "assets/gofab.png",
+      "Lazing on a Sunday Afternoon": "assets/lazingosa.png"
+    };    
+    return imageMap[result] || 'assets/default.png'; // Chemin par défaut si le résultat n'est pas trouvé
   }
 }

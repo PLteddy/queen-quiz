@@ -36,6 +36,11 @@ import { QuizService, Question } from './quiz.service';
         <p>Question {{ currentQuestion + 1 }}/{{ questions.length }}</p>
       </aside>
     </div>
+    <footer>
+      <p>Ce quiz a été créé dans le cadre d’un projet personnel pour me familiariser avec Angular. Les musiques de Queen mentionnées dans ce quiz, telles que Killer Queen ou Bohemian Rhapsody, sont des œuvres iconiques qui ne m'appartiennent pas et restent la propriété exclusive de leurs ayants droit.
+      Si vous souhaitez en savoir plus sur mes projets ou entrer en contact avec moi, n’hésitez pas à visiter mon profil LinkedIn :
+      Mon LinkedIn</p>
+    </footer>
   `
 })
 export class QuizComponent {
