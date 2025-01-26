@@ -139,14 +139,13 @@ export class QuizService {
 
   // Méthode pour obtenir les questions de quiz avec ordre aléatoire
   getQuestions(): Question[] {
-    // Clone les questions pour éviter de modifier l'original
-    const shuffledQuestions = this.questions.map(question => ({
-      ...question,
-      answers: this.shuffle([...question.answers]),
-      scores: [...question.scores]
-    }));
-
-    return this.shuffle(shuffledQuestions);
+    return this.shuffle(
+      this.questions.map(question => ({
+        ...question,
+        answers: this.shuffle([...question.answers]), // Mélange les réponses
+        scores: [...question.scores]
+      }))
+    );
   }
 
   // Méthode pour soumettre une réponse et mettre à jour les scores
@@ -176,7 +175,7 @@ export class QuizService {
       "Killer Queen": "assets/killerqueen.png",
       "Good Old-Fashioned Lover Boy": "assets/gofab.png",
       "Lazing on a Sunday Afternoon": "assets/lazingosa.png"
-    };    
-    return imageMap[result] || 'assets/default.png'; // Chemin par défaut si le résultat n'est pas trouvé
+    };
+    return imageMap[result] || 'assets/gofab.png'; // Chemin par défaut si le résultat n'est pas trouvé
   }
 }
