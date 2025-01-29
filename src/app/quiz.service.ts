@@ -31,7 +31,7 @@ export class QuizService {
     {
       text: "Quel est ton état d’esprit en général?",
       answers: [
-        "Confident et plein d’assurance.",
+        "Confiant et plein d’assurance.",
         "Tourmenté et introspectif, mais créatif.",
         "Nostalgique et rêveur.",
         "Détendu, prêt à profiter d’un moment tranquille."

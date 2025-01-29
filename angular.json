@@ -25,17 +25,20 @@
               "sourceMap": false
             }
           },
-          "options": {
-            "assets": ["src/assets",
-  "src/favicon.ico"],
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "outputPath": "dist/demo",
-            "polyfills": ["zone.js"],
-            "scripts": [],
-            "styles": ["src/styles.css"],
-            "tsConfig": "tsconfig.app.json"
-          }
+"options": {
+  "assets": [
+    "src/assets",
+    "src/favicon.ico"
+  ],
+  "outputPath": "dist",
+  "index": "src/index.html",
+  "browser": "src/main.ts",
+  "polyfills": ["zone.js"],
+  "scripts": [],
+  "styles": ["src/styles.css"],
+  "tsConfig": "tsconfig.app.json",
+  "baseHref": "/queen-quiz/"
+}
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -48,6 +51,9 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       },
       "prefix": "app",

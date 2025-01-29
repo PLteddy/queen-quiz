@@ -149,6 +149,10 @@ img {
       height: auto;
       transform: none;
   }
+  h1 {
+    font-size: 2rem;
+    padding: 20px;
+  }
 
   .side.right {
       display: none; /* Cacher le côté droit sur les petites versions */
@@ -165,6 +169,12 @@ img {
 
   img {
       width: 80%; /* Ajuster la taille de l'image sur les petites versions */
+  }
+  .Titre {
+    padding: 20px;
+  }
+  .button {
+    padding: 10px 15px;
   }
 }
 
@@ -191,11 +201,15 @@ img {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
+    padding: 20px;
   }
 
   img {
     width: 60%;
+  }
+  .Titre {
+    padding: 20px;
   }
     
 }
@@ -213,5 +227,14 @@ img {
   img {
     width: 80%;
   }
-  
+  h1 {
+    font-size: 2rem;
+    padding: 20px;
+  }
+  .Titre {
+    padding: 20px;
+  }
+  .button {
+    padding: 10px 15px;
+  }
 }
