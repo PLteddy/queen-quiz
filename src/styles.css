@@ -95,6 +95,15 @@ footer {
   text-align: center;
   border-top: 3px solid #0D0E0A;
   padding: 20px;
+  
+}
+footer a {
+  color: inherit; /* Utiliser la couleur du texte parent */
+  text-decoration: none; /* Supprimer le soulignement */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Ajouter un soulignement au survol */
 }
 
 /* Styles pour le quiz */

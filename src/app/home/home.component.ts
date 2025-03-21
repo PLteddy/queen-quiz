@@ -30,7 +30,7 @@ import { RouterLink } from '@angular/router';
     <footer class="footer">
       <p>Ce quiz a été créé dans le cadre d’un projet personnel pour me familiariser avec Angular. Les musiques de Queen mentionnées dans ce quiz, telles que Killer Queen ou Bohemian Rhapsody, sont des œuvres iconiques qui ne m'appartiennent pas et restent la propriété exclusive de leurs ayants droit.
       Si vous souhaitez en savoir plus sur mes projets ou entrer en contact avec moi, n’hésitez pas à visiter mon profil LinkedIn :
-      Mon LinkedIn</p>
+      <a href="https://www.linkedin.com/in/yussera-sebdaoui-2a2405200/?originalSubdomain=fr" target="_blank">Mon LinkedIn</a></p>
     </footer>
   `
 })
